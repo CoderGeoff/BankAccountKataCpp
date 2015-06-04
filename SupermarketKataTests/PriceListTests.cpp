@@ -1,9 +1,16 @@
 #include "stdafx.h"
 #include "PriceListTests.h"
+#include "..\SupermarketKata\PriceList.h"
 
 void PriceListTests::PriceOfTinOfBeansIs40p()
 {
-	int x = 4;
-	CPPUNIT_ASSERT(x == 4);
+	// Arrange
+	PriceList priceList;
+
+	// Act
+	auto priceOfTinOfBeans = priceList["TinOfBeans"];
+
+	// Assert
+	CPPUNIT_ASSERT(priceOfTinOfBeans == 40);
 }
 CPPUNIT_TEST_SUITE_REGISTRATION(PriceListTests);
