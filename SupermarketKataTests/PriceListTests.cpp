@@ -3,7 +3,7 @@
 
 void PriceListTests::PriceOfTinOfBeansIs40p()
 {
-	int x = 5;
+	int x = 4;
 	CPPUNIT_ASSERT(x == 4);
 }
 CPPUNIT_TEST_SUITE_REGISTRATION(PriceListTests);
