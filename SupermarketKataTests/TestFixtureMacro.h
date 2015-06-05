@@ -32,6 +32,9 @@
 #define DECLARE_TEST(name) void name();
 #define DECLARE_TESTS(...) FOR_EACH(DECLARE_TEST, __VA_ARGS__)
 
+// TEST_FIXTURE describes a test fixture with no additional members
+// It takes the name of the fixture followed by a comma-separated list of test methods
+// e.g. TEST_FIXTURE(MyTests, TestFeature1, TestFeature2);
 #define TEST_FIXTURE(name, ...)\
 class name : public CppUnit::TestFixture {\
 	CPPUNIT_TEST_SUITE(name);\
@@ -42,4 +45,22 @@ public:\
 };\
 CPPUNIT_TEST_SUITE_REGISTRATION(name)
 
+// TEST_FIXTURE_START and TEST_FIXTURE_END are used as bookends to define a test fixture, allowing you to 
+// define class members between the two declarations, e.g.
+// TEST_FIXTURE_START(MyTests);
+//     void setUp();
+//     void tearDown();
+//     bool flag;
+// TEST_FIXTURE_END();
+#define TEST_FIXTURE_START(name, ...)\
+class name;\
+CPPUNIT_TEST_SUITE_REGISTRATION(name);\
+class name : public CppUnit::TestFixture {\
+	CPPUNIT_TEST_SUITE(name);\
+	REGISTER_TESTS(__VA_ARGS__);\
+	CPPUNIT_TEST_SUITE_END();\
+public:\
+	DECLARE_TESTS(__VA_ARGS__);
+
+#define TEST_FIXTURE_END };
 
