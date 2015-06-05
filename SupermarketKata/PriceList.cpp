@@ -4,11 +4,11 @@
 
 PriceList::PriceList()
 {
-
+	m_Prices[TinOfBeans()] = 40;
 }
 
 
 int PriceList::operator [](const std::string& item)
 {
-	return 0;
+	return m_Prices[item];
 }
