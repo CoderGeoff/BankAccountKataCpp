@@ -9,6 +9,7 @@ public:
 	~PriceList() {};
 
 	const std::string TinOfBeans() const { return std::string("TinOfBeans"); };
+	const std::string TinOfSoup() const { return std::string("TinOfSoup"); };
 
 	int operator [](const std::string& item);
 

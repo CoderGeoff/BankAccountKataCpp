@@ -5,6 +5,7 @@
 PriceList::PriceList()
 {
 	m_Prices[TinOfBeans()] = 40;
+	m_Prices[TinOfSoup()] = 90;
 }
 
 
