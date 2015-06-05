@@ -7,6 +7,7 @@ PriceList::PriceList()
 	m_Prices[TinOfBeans()] = 40;
 	m_Prices[TinOfSoup()] = 90;
 	m_Prices[TinOfPeaches()] = 55;
+	m_Prices[Coleslaw()] = 50;
 }
 
 

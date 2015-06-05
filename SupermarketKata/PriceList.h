@@ -11,6 +11,7 @@ public:
 	const std::string TinOfBeans() const { return std::string("TinOfBeans"); };
 	const std::string TinOfSoup() const { return std::string("TinOfSoup"); };
 	const std::string TinOfPeaches() const { return std::string("TinOfPeaches"); };
+	const std::string Coleslaw() const { return std::string("Coleslaw"); };
 
 	int operator [](const std::string& item);
 
