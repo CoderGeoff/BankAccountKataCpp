@@ -42,21 +42,4 @@ public:\
 	DECLARE_TESTS(__VA_ARGS__);\
 }
 
-TEST_FIXTURE(MyTest, a, b);
-
-class PriceListTests: public CppUnit::TestFixture
-{
-
-public:
-	CPPUNIT_TEST_SUITE(PriceListTests);
-	CPPUNIT_TEST(PriceOfTinOfBeansIs40p);
-	CPPUNIT_TEST(PriceOfTinOfSoupIs90p);
-	CPPUNIT_TEST(PriceOfTinOfPeachesIs55p);
-	CPPUNIT_TEST(PriceOfColeslaw);
-	CPPUNIT_TEST_SUITE_END();
-
-	void PriceOfTinOfBeansIs40p();
-	void PriceOfTinOfSoupIs90p();
-	void PriceOfTinOfPeachesIs55p();
-	void PriceOfColeslaw();
-};
+TEST_FIXTURE(PriceListTests, PriceOfTinOfBeansIs40p, PriceOfTinOfSoupIs90p, PriceOfTinOfPeachesIs55p, PriceOfColeslaw);
