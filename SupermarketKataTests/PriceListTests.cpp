@@ -1,6 +1,12 @@
 #include "stdafx.h"
+
+#include <cppUnit/TestCase.h>
+#include <cppUnit/extensions/HelperMacros.h>
+
 #include "PriceListTests.h"
 #include "..\SupermarketKata\PriceList.h"
+
+TEST_FIXTURE(PriceListTests, PriceOfTinOfBeansIs40p, PriceOfTinOfSoupIs90p, PriceOfTinOfPeachesIs55p, PriceOfColeslaw);
 
 void PriceListTests::PriceOfTinOfBeansIs40p()
 {

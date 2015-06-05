@@ -1,6 +1,5 @@
 #pragma once
-#include <cppUnit/TestCase.h>
-#include <cppUnit/extensions/HelperMacros.h>
+
 
 #define EXPAND( x ) x
 
@@ -42,4 +41,4 @@ public:\
 	DECLARE_TESTS(__VA_ARGS__);\
 }
 
-TEST_FIXTURE(PriceListTests, PriceOfTinOfBeansIs40p, PriceOfTinOfSoupIs90p, PriceOfTinOfPeachesIs55p, PriceOfColeslaw);
+
