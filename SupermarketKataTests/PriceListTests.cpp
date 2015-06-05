@@ -6,7 +6,12 @@
 #include "TestFixtureMacro.h"
 #include "..\SupermarketKata\PriceList.h"
 
-TEST_FIXTURE(PriceListTests, PriceOfTinOfBeansIs40p, PriceOfTinOfSoupIs90p, PriceOfTinOfPeachesIs55p, PriceOfColeslaw);
+TEST_FIXTURE(PriceListTests, 
+	PriceOfTinOfBeansIs40p, 
+	PriceOfTinOfSoupIs90p, 
+	PriceOfTinOfPeachesIs55p, 
+	PriceOfColeslaw);
+CPPUNIT_TEST_SUITE_REGISTRATION(PriceListTests);
 
 void PriceListTests::PriceOfTinOfBeansIs40p()
 {
@@ -56,4 +61,3 @@ void PriceListTests::PriceOfColeslaw()
 	CPPUNIT_ASSERT_EQUAL(50, price);
 }
 
-CPPUNIT_TEST_SUITE_REGISTRATION(PriceListTests);
