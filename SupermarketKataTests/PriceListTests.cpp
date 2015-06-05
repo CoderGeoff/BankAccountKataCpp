@@ -11,7 +11,7 @@ void PriceListTests::PriceOfTinOfBeansIs40p()
 	auto price = priceList["TinOfBeans"];
 
 	// Assert
-	CPPUNIT_ASSERT(price == 40);
+	CPPUNIT_ASSERT_EQUAL(40, price);
 }
 
 void PriceListTests::PriceOfTinOfSoupIs90p()
@@ -23,7 +23,7 @@ void PriceListTests::PriceOfTinOfSoupIs90p()
 	auto price = priceList["TinOfSoup"];
 
 	// Assert
-	CPPUNIT_ASSERT(price == 90);
+	CPPUNIT_ASSERT_EQUAL(90, price);
 }
 
 CPPUNIT_TEST_SUITE_REGISTRATION(PriceListTests);
