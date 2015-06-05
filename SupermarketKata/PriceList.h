@@ -1,9 +1,8 @@
 #pragma once
 #include <string>
 #include <map>
-#include "Exports.h"
 
-class LIBRARY_API PriceList
+class PriceList
 {
 public:
 	PriceList();
