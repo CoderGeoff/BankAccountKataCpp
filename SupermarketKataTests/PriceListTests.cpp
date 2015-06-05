@@ -11,7 +11,6 @@ TEST_FIXTURE(PriceListTests,
 	PriceOfTinOfSoupIs90p, 
 	PriceOfTinOfPeachesIs55p, 
 	PriceOfColeslaw);
-CPPUNIT_TEST_SUITE_REGISTRATION(PriceListTests);
 
 void PriceListTests::PriceOfTinOfBeansIs40p()
 {

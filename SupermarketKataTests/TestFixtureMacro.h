@@ -39,6 +39,7 @@ class name : public CppUnit::TestFixture {\
 	CPPUNIT_TEST_SUITE_END();\
 public:\
 	DECLARE_TESTS(__VA_ARGS__);\
-}
+};\
+CPPUNIT_TEST_SUITE_REGISTRATION(name)
 
 
