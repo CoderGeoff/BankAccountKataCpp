@@ -2,23 +2,6 @@
 #include <cppUnit/TestCase.h>
 #include <cppUnit/extensions/HelperMacros.h>
 
-#define TEST_FIXTUREOLD(CLASSNAME, T1, T2, T3, ...) \
-class CLASSNAME : public CppUnit::TestFixture \
-{\
-	CPPUNIT_TEST_SUITE(CLASSNAME);\
-	CPPUNIT_TEST(T1); \
-	CPPUNIT_TEST(T2); \
-	CPPUNIT_TEST(T3); \
-	CPPUNIT_TEST_SUITE_END(); \
-public: \
-	void T1(); \
-    void T2(); \
-	void T3(); \
-}
-
-TEST_FIXTUREOLD(PriceListTests2, PriceOfTinOfBeansIs40p, PriceOfTinOfSoupIs90p, PriceOfTinOfPeachesIs55p);
-
-
 #define EXPAND( x ) x
 
 #define FOR_EACH_1(what, x, ...) what(x)
