@@ -26,4 +26,17 @@ void PriceListTests::PriceOfTinOfSoupIs90p()
 	CPPUNIT_ASSERT_EQUAL(90, price);
 }
 
+void PriceListTests::PriceOfTinOfPeachesIs55p()
+{
+	// Arrange
+	PriceList priceList;
+
+	// Act
+	auto price = priceList["TinOfPeaches"];
+
+	// Assert
+	CPPUNIT_ASSERT_EQUAL(55, price);
+}
+
+
 CPPUNIT_TEST_SUITE_REGISTRATION(PriceListTests);
