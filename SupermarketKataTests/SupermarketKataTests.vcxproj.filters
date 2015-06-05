@@ -21,7 +21,7 @@
     <ClInclude Include="targetver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="PriceListTests.h">
+    <ClInclude Include="TestFixtureMacro.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -3,7 +3,7 @@
 #include <cppUnit/TestCase.h>
 #include <cppUnit/extensions/HelperMacros.h>
 
-#include "PriceListTests.h"
+#include "TestFixtureMacro.h"
 #include "..\SupermarketKata\PriceList.h"
 
 TEST_FIXTURE(PriceListTests, PriceOfTinOfBeansIs40p, PriceOfTinOfSoupIs90p, PriceOfTinOfPeachesIs55p, PriceOfColeslaw);
