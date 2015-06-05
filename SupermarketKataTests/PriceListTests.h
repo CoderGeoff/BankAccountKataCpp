@@ -25,11 +25,9 @@
 #define FOR_EACH_19(what, x, ...) what(x) EXPAND(FOR_EACH_18(what, __VA_ARGS__))
 #define FOR_EACH_20(what, x, ...) what(x) EXPAND(FOR_EACH_19(what, __VA_ARGS__))
 
-
 #define GET_MACRO(_1,_2,_3,_4,_5,_6,_7,_8,_9,_10,_11,_12,_13,_14,_15,_16,_17,_18,_19,_20,NAME,...) NAME 
 #define FOR_EACH(action,...) EXPAND(GET_MACRO(__VA_ARGS__, FOR_EACH_20,FOR_EACH_19,FOR_EACH_18,FOR_EACH_17,FOR_EACH_16,FOR_EACH_15,FOR_EACH_14,FOR_EACH_13,FOR_EACH_12,FOR_EACH_11,FOR_EACH_10,FOR_EACH_9,FOR_EACH_8,FOR_EACH_7,FOR_EACH_6,FOR_EACH_5,FOR_EACH_4,FOR_EACH_3,FOR_EACH_2,FOR_EACH_1)(action, __VA_ARGS__))
 
-#define SIMPLE(name) simple(name)
 #define REGISTER_TEST(name) CPPUNIT_TEST(name);
 #define REGISTER_TESTS(...) FOR_EACH(REGISTER_TEST, __VA_ARGS__)
 #define DECLARE_TEST(name) void name();
