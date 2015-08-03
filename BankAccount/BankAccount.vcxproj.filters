@@ -29,9 +29,6 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Kata.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="BankAccount.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
