@@ -6,5 +6,6 @@ public:
     BankAccount();
     void Deposit(int cents);
     int GetBalance() const;
+    void Withdraw(int cents);
 };
 
