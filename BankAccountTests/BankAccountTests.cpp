@@ -7,8 +7,15 @@
 #include "BankAccount.h"
 
 TEST_FIXTURE(BankAccountTests, 
+    GivenAnEmptyBankAccount_BalanceShouldBe$10,
     GivenAnEmptyBankAccount_WhenIDeposit$10_BalanceShouldBe$10,
     GivenABankAccountWith$10_WhenIWithdraw$6_BalanceShouldBe$4);
+
+void BankAccountTests::GivenAnEmptyBankAccount_BalanceShouldBe$10()
+{
+    BankAccount account;
+    CPPUNIT_ASSERT_EQUAL(0, account.GetBalance());
+}
 
 void BankAccountTests::GivenAnEmptyBankAccount_WhenIDeposit$10_BalanceShouldBe$10()
 {
