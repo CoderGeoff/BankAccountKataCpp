@@ -4,7 +4,7 @@
 #include <cppUnit/extensions/HelperMacros.h>
 
 #include "TestFixtureMacro.h"
-#include "../Kata/BankAccount.h"
+#include "BankAccount.h"
 
 TEST_FIXTURE(BankAccountTests, GivenAnEmptyBankAccount_WhenIDeposit$10_BalanceShouldBe$10);
 
