@@ -1,7 +1,7 @@
 #include "stdafx.h"
+#include <memory>
 #include "WithdrawTransaction.h"
 #include "BankAccount.h"
-#include <memory>
 
 WithdrawTransaction::WithdrawTransaction(std::shared_ptr<BankAccount> account)
 {
