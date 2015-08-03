@@ -5,3 +5,5 @@ Debug/
 *.ipch
 packages/
 *.user
+*/Release/*
+Release/
