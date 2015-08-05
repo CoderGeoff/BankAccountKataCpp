@@ -2,23 +2,35 @@
 #include <cppunit/CompilerOutputter.h>
 #include <cppunit/extensions/TestFactoryRegistry.h>
 #include <cppunit/ui/text/TestRunner.h>
+#include <gmock/gmock.h>
 
+
+void SetUpGoogleMockToWorkWithCppUnit(int argc, char** argv)
+{
+    ::testing::GTEST_FLAG(throw_on_failure) = true;
+    ::testing::InitGoogleMock(&argc, argv);
+}
+
+template<typename FormatterT>
+void SetOutputter(CppUnit::TextUi::TestRunner& runner)
+{
+    auto outputter = new FormatterT(&runner.result(), std::cerr);
+    runner.setOutputter(outputter);
+}
+
+void AddRegisteredTests(CppUnit::TextUi::TestRunner& runner)
+{
+    CppUnit::Test *suite = CppUnit::TestFactoryRegistry::getRegistry().makeTest();
+    runner.addTest(suite);
+}
 
 int main(int argc, char* argv[])
 {
-	// Get the top level suite from the registry
-	CppUnit::Test *suite = CppUnit::TestFactoryRegistry::getRegistry().makeTest();
+    SetUpGoogleMockToWorkWithCppUnit(argc, argv);
 
-	// Adds the test to the list of test to run
-	CppUnit::TextUi::TestRunner runner;
-	runner.addTest(suite);
+    CppUnit::TextUi::TestRunner runner;
+    AddRegisteredTests(runner);
+    SetOutputter<CppUnit::CompilerOutputter>(runner);
 
-	// Change the default outputter to a compiler error format outputter
-	runner.setOutputter(new CppUnit::CompilerOutputter(&runner.result(),
-		std::cerr));
-	// Run the tests.
-	bool wasSucessful = runner.run();
-
-	// Return error code 1 if the one of test failed.
-	return wasSucessful ? 0 : 1;
+	return runner.run() ? 0 : 1;
 }
