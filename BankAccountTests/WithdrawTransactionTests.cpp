@@ -5,7 +5,7 @@
 #include "WithdrawTransaction.h"
 #include <BankAccount.h>
 
-TEST(WithdrawTransactionTests,     GivenABankAccountWith$10_WhenIRunATransactionToWithdraw$6_BalanceShouldBe$4)
+TEST(WithdrawTransactionTests, GivenABankAccountWith$10_WhenIRunATransactionToWithdraw$6_BalanceShouldBe$4)
 {
     // Given
     std::shared_ptr<BankAccount> account(new BankAccount(1000));
