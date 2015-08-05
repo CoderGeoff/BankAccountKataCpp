@@ -1,37 +1,36 @@
 #include "stdafx.h"
 
-#include <cppUnit/TestCase.h>
-#include <cppUnit/extensions/HelperMacros.h>
-
-#include "TestFixtureMacro.h"
+#include <gtest/gtest.h>
+#include <gmock/gmock.h>
 #include "BankAccount.h"
+#include <memory>
 
-TEST_FIXTURE(BankAccountTests, 
-    GivenANewBankAccount_BalanceShouldBe$0,
-    GivenABankAccountWith$10_BalanceShouldBe$10,
-    GivenAnEmptyBankAccount_WhenIDeposit$10_BalanceShouldBe$10,
-    GivenABankAccountWith$10_WhenIWithdraw$6_BalanceShouldBe$4);
+using ::testing::A;
+using ::testing::An;
+using ::testing::AtLeast;
+using ::testing::Return;
 
-void BankAccountTests::GivenANewBankAccount_BalanceShouldBe$0()
+
+TEST(BankAccountTests, GivenANewBankAccount_BalanceShouldBe$0)
 {
     BankAccount account;
-    CPPUNIT_ASSERT_EQUAL(0, account.GetBalance());
+    ASSERT_EQ(0, account.GetBalance());
 }
 
-void BankAccountTests::GivenABankAccountWith$10_BalanceShouldBe$10()
+TEST(BankAccountTests, GivenABankAccountWith$10_BalanceShouldBe$10)
 {
     BankAccount account(1000);
-    CPPUNIT_ASSERT_EQUAL(1000, account.GetBalance());
+    ASSERT_EQ(1000, account.GetBalance());
 }
 
-void BankAccountTests::GivenAnEmptyBankAccount_WhenIDeposit$10_BalanceShouldBe$10()
+TEST(BankAccountTests, GivenAnEmptyBankAccount_WhenIDeposit$10_BalanceShouldBe$10)
 {
     BankAccount account;
     account.Deposit(1000);
-    CPPUNIT_ASSERT_EQUAL(1000, account.GetBalance());
+    ASSERT_EQ(1000, account.GetBalance());
 }
 
-void BankAccountTests::GivenABankAccountWith$10_WhenIWithdraw$6_BalanceShouldBe$4()
+TEST(BankAccountTests, GivenABankAccountWith$10_WhenIWithdraw$6_BalanceShouldBe$4)
 {
     // Given
     BankAccount account(1000);
@@ -40,5 +39,5 @@ void BankAccountTests::GivenABankAccountWith$10_WhenIWithdraw$6_BalanceShouldBe$
     account.Withdraw(600);
 
     // Then
-    CPPUNIT_ASSERT_EQUAL(400, account.GetBalance());
+    ASSERT_EQ(400, account.GetBalance());
 }
