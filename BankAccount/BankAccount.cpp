@@ -1,10 +1,11 @@
 #include "stdafx.h"
 #include "BankAccount.h"
 
-BankAccount::BankAccount() : BankAccount(0) {}
+BankAccount::BankAccount(AccountType type) : BankAccount(type, 0) {}
 
-BankAccount::BankAccount(int initialBalanceInCents)
-: m_Balance(initialBalanceInCents) {}
+BankAccount::BankAccount(AccountType type, int initialBalanceInCents) :
+m_Type(type),
+m_Balance(initialBalanceInCents) {}
 
 int BankAccount::GetBalance() const { return m_Balance; }
 
