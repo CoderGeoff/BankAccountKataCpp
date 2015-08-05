@@ -42,3 +42,12 @@ TEST(BankAccountTests, GivenABankAccountWith$10_WhenIWithdraw$6_BalanceShouldBe$
     // Then
     ASSERT_EQ(400, account.GetBalance());
 }
+
+TEST(BankAccountTests, GivenASavingBankAccount_ItsTypeShouldBeSavings)
+{
+    // Given
+    BankAccount account(SavingsAccount);
+
+    // Then
+    ASSERT_EQ(SavingsAccount, account.GetType());
+}

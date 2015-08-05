@@ -7,6 +7,11 @@ BankAccount::BankAccount(AccountType type, int initialBalanceInCents) :
 m_Type(type),
 m_Balance(initialBalanceInCents) {}
 
+AccountType BankAccount::GetType() const
+{
+    return m_Type;
+}
+
 int BankAccount::GetBalance() const { return m_Balance; }
 
 void BankAccount::Deposit(int cents)

@@ -10,6 +10,7 @@ public:
     explicit BankAccount(enum AccountType);
     explicit BankAccount(enum AccountType, int initialBalanceInCents);
 
+    AccountType GetType() const;
     int GetBalance() const;
     void Deposit(int cents);
     void Withdraw(int cents);
