@@ -5,15 +5,16 @@
 #include "WithdrawTransaction.h"
 #include <BankAccount.h>
 
-TEST(WithdrawTransactionTests, GivenABankAccountWith$10_WhenIRunATransactionToWithdraw$6_BalanceShouldBe$4)
+TEST(WithdrawTransactionTests, GivenNoRules_WhenIExecuteAWithdrawTransaction_TheAccountShouldBeDebited)
 {
     // Given
-    std::shared_ptr<BankAccount> account(new BankAccount(CurrentAccount, 1000));
+    auto initialBalance = 1000;
+    std::shared_ptr<BankAccount> account(new BankAccount(CurrentAccount, initialBalance));
 
     // When
     std::unique_ptr<WithdrawTransaction> withdrawFromAccount(new WithdrawTransaction(account));
     withdrawFromAccount->Execute(600);
 
     // Then
-    ASSERT_EQ(400, account->GetBalance());
+    ASSERT_LT(account->GetBalance(), initialBalance);
 }
