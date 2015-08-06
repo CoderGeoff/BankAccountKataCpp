@@ -1,16 +1,9 @@
 #include "stdafx.h"
 
 #include <gtest/gtest.h>
-#include <gmock/gmock.h>
 #include "BankAccount.h"
 #include <memory>
 #include <AccountType.h>
-
-using ::testing::A;
-using ::testing::An;
-using ::testing::AtLeast;
-using ::testing::Return;
-
 
 TEST(BankAccountTests, GivenANewBankAccount_BalanceShouldBe$0)
 {
