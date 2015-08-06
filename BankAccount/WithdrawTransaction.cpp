@@ -10,7 +10,7 @@ WithdrawTransaction::WithdrawTransaction(std::shared_ptr<BankAccount> account)
 
 bool WithdrawTransaction::Execute(int cents)
 {
-    m_Account->Withdraw(cents);
+    m_Account->SetBalance(m_Account->GetBalance() - cents);
     return true;
 }
 

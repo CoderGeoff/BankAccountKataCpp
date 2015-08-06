@@ -8,12 +8,10 @@ class BankAccount
     int m_Balance;
 public:
     explicit BankAccount(enum AccountType);
-    explicit BankAccount(enum AccountType, int initialBalanceInCents);
 
     AccountType GetType() const;
     int GetBalance() const;
-    void Deposit(int cents);
-    void Withdraw(int cents);
+    void SetBalance(int cents);
 
     BankAccount(const BankAccount&) = delete;
     BankAccount& operator=(const BankAccount&) = delete;
