@@ -32,13 +32,6 @@ TEST(BankAccountTests, WhenISetTheBalanceTo$0_ThenBalanceShouldBe$0)
     ASSERT_EQ(0, account.GetBalance());
 }
 
-TEST(BankAccountTests, GivenAnEmptyBankAccount_WhenIDeposit$10_BalanceShouldBe$10)
-{
-    BankAccount account(CurrentAccount);
-    account.Deposit(1000);
-    ASSERT_EQ(1000, account.GetBalance());
-}
-
 TEST(BankAccountTests, GivenASavingBankAccount_ItsTypeShouldBeSavings)
 {
     // Given
