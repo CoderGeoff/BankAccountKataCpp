@@ -9,7 +9,7 @@
 TEST(WithdrawTransactionTests, GivenAnAccountWith$10AndNoRules_WhenIWithdraw$6_ThenBalanceShouldBe$4)
 {
     // Given
-    std::shared_ptr<BankAccount> account(new BankAccount(CurrentAccount));
+    std::shared_ptr<BankAccount> account(new BankAccount(SavingsAccount));
     account->SetBalance(1000);
 
     // When
