@@ -9,7 +9,8 @@ TEST(WithdrawTransactionTests, GivenNoRules_WhenIExecuteAWithdrawTransaction_The
 {
     // Given
     auto initialBalance = 1000;
-    std::shared_ptr<BankAccount> account(new BankAccount(CurrentAccount, initialBalance));
+    std::shared_ptr<BankAccount> account(new BankAccount(CurrentAccount));
+    account->SetBalance(initialBalance);
 
     // When
     std::unique_ptr<WithdrawTransaction> withdrawFromAccount(new WithdrawTransaction(account));

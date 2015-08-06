@@ -1,11 +1,9 @@
 #include "stdafx.h"
 #include "BankAccount.h"
 
-BankAccount::BankAccount(AccountType type) : BankAccount(type, 0) {}
-
-BankAccount::BankAccount(AccountType type, int initialBalanceInCents) :
+BankAccount::BankAccount(AccountType type) : 
 m_Type(type),
-m_Balance(initialBalanceInCents) {}
+m_Balance(0) {}
 
 AccountType BankAccount::GetType() const
 {

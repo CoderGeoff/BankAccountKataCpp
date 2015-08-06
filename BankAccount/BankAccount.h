@@ -8,7 +8,6 @@ class BankAccount
     int m_Balance;
 public:
     explicit BankAccount(enum AccountType);
-    explicit BankAccount(enum AccountType, int initialBalanceInCents);
 
     AccountType GetType() const;
     int GetBalance() const;

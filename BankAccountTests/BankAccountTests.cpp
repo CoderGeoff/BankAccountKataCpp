@@ -49,7 +49,8 @@ TEST(BankAccountTests, GivenAnEmptyBankAccount_WhenIDeposit$10_BalanceShouldBe$1
 TEST(BankAccountTests, GivenABankAccountWith$10_WhenIWithdraw$6_BalanceShouldBe$4)
 {
     // Given
-    BankAccount account(CurrentAccount, 1000);
+    BankAccount account(CurrentAccount);
+    account.SetBalance(1000);
 
     // When
     account.Withdraw(600);
