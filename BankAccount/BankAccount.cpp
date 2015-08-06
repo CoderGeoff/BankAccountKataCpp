@@ -17,8 +17,3 @@ void BankAccount::SetBalance(int cents)
     m_Balance = cents;
 }
 
-void BankAccount::Deposit(int cents)
-{
-    m_Balance += cents;
-}
-

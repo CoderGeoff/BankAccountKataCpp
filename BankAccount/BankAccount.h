@@ -12,7 +12,6 @@ public:
     AccountType GetType() const;
     int GetBalance() const;
     void SetBalance(int cents);
-    void Deposit(int cents);
 
     BankAccount(const BankAccount&) = delete;
     BankAccount& operator=(const BankAccount&) = delete;
