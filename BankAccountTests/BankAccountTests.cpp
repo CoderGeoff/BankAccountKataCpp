@@ -18,10 +18,25 @@ TEST(BankAccountTests, GivenANewBankAccount_BalanceShouldBe$0)
     ASSERT_EQ(0, account.GetBalance());
 }
 
-TEST(BankAccountTests, GivenABankAccountWith$10_BalanceShouldBe$10)
+TEST(BankAccountTests, WhenISetTheBalanceTo$1_ThenBalanceShouldBe$1)
 {
-    BankAccount account(CurrentAccount, 1000);
-    ASSERT_EQ(1000, account.GetBalance());
+    BankAccount account(CurrentAccount);
+    account.SetBalance(100);
+    ASSERT_EQ(100, account.GetBalance());
+}
+
+TEST(BankAccountTests, WhenISetTheBalanceTo$Minus1_ThenBalanceShouldBe$Minus1)
+{
+    BankAccount account(CurrentAccount);
+    account.SetBalance(-100);
+    ASSERT_EQ(-100, account.GetBalance());
+}
+
+TEST(BankAccountTests, WhenISetTheBalanceTo$0_ThenBalanceShouldBe$0)
+{
+    BankAccount account(CurrentAccount);
+    account.SetBalance(0);
+    ASSERT_EQ(0, account.GetBalance());
 }
 
 TEST(BankAccountTests, GivenAnEmptyBankAccount_WhenIDeposit$10_BalanceShouldBe$10)

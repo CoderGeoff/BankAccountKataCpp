@@ -14,6 +14,11 @@ AccountType BankAccount::GetType() const
 
 int BankAccount::GetBalance() const { return m_Balance; }
 
+void BankAccount::SetBalance(int cents)
+{
+    m_Balance = cents;
+}
+
 void BankAccount::Deposit(int cents)
 {
     m_Balance += cents;

@@ -12,6 +12,7 @@ public:
 
     AccountType GetType() const;
     int GetBalance() const;
+    void SetBalance(int cents);
     void Deposit(int cents);
     void Withdraw(int cents);
 
