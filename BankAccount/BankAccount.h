@@ -13,7 +13,6 @@ public:
     int GetBalance() const;
     void SetBalance(int cents);
     void Deposit(int cents);
-    void Withdraw(int cents);
 
     BankAccount(const BankAccount&) = delete;
     BankAccount& operator=(const BankAccount&) = delete;

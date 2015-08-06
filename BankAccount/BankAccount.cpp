@@ -22,7 +22,3 @@ void BankAccount::Deposit(int cents)
     m_Balance += cents;
 }
 
-void BankAccount::Withdraw(int cents)
-{
-    m_Balance -= cents;
-}
