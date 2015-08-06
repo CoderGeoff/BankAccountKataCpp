@@ -8,7 +8,7 @@
 TEST(DepositTransactionTests, GivenAnAccountWith$1AndNoRules_WhenIDeposit$1_ThenBalanceShouldBe$2)
 {
     // Given
-    std::shared_ptr<BankAccount> account(new BankAccount(CurrentAccount));
+    std::shared_ptr<BankAccount> account(new BankAccount(CheckingAccount));
     account->SetBalance(100);
 
     // When

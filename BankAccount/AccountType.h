@@ -1,7 +1,7 @@
 #pragma once
 enum AccountType
 {
-    CurrentAccount,
+    CheckingAccount,
     FixedTermBondAccount,
     SavingsAccount,
 };

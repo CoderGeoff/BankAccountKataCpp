@@ -7,27 +7,27 @@
 
 TEST(BankAccountTests, GivenANewBankAccount_BalanceShouldBe$0)
 {
-    BankAccount account(CurrentAccount);
+    BankAccount account(CheckingAccount);
     ASSERT_EQ(0, account.GetBalance());
 }
 
 TEST(BankAccountTests, WhenISetTheBalanceTo$1_ThenBalanceShouldBe$1)
 {
-    BankAccount account(CurrentAccount);
+    BankAccount account(CheckingAccount);
     account.SetBalance(100);
     ASSERT_EQ(100, account.GetBalance());
 }
 
 TEST(BankAccountTests, WhenISetTheBalanceTo$Minus1_ThenBalanceShouldBe$Minus1)
 {
-    BankAccount account(CurrentAccount);
+    BankAccount account(CheckingAccount);
     account.SetBalance(-100);
     ASSERT_EQ(-100, account.GetBalance());
 }
 
 TEST(BankAccountTests, WhenISetTheBalanceTo$0_ThenBalanceShouldBe$0)
 {
-    BankAccount account(CurrentAccount);
+    BankAccount account(CheckingAccount);
     account.SetBalance(0);
     ASSERT_EQ(0, account.GetBalance());
 }
