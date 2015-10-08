@@ -21,10 +21,7 @@ Break the exercise down into these steps
 
 ### Step 1: A WithdrawTransaction should accept a set of rules (but ignore them)
 
-1. In the BankAccount project, create an IRule interface (i.e. an abstract class) with the pure virtual method
-```
-    bool IsBlocked(int balanceBefore, int balanceAfter)
-```
+1. In the BankAccount project, create an IRule interface (i.e. an abstract class) with the pure virtual method `bool IsBlocked(int balanceBefore, int balanceAfter)`
 2. Change the test in WithdrawTransactionTests to pass an empty collection of IRule objects into the WithdrawTransaction constructor
 3. Modify the WithdrawTransaction constructor so that the code compiles.
 4. Compile, run the tests and verify that they still pass
@@ -48,11 +45,7 @@ Break the exercise down into these steps
 6. Make any appropriate improvements to the code and tests
 
 ### Step 5: Create the rules with an IRulesFactory interface
-1. Create a new interface, IRulesFactory with a method
-```
-    CreateWithdrawalRulesFor(AccountType)
-```
-that returns a collection of IRules
+1. Create a new interface, IRulesFactory with a method, `CreateWithdrawalRulesFor(AccountType)` that returns a collection of IRules
 2. In each of the tests in WithdrawTransactionTests, create a mock IRulesFactory object, set up the mock so that it returns the collection of IRules the test uses, and pass the IRulesFactory into the WithdrawTransaction constructor in place of the collection of IRules. 
 3. Run the tests - some should fail.
 4. Implement code in WithdrawTransaction.Execute to call the IRulesFactory and store the rules returned, such that the tests now pass.
