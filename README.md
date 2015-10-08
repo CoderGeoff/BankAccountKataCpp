@@ -74,10 +74,9 @@ Follow the same method to write a MinimumWithdrawalRule. Its IsBlocked should re
 ### Step 8: Write the first integration test
 1. In a new test suite, IntegrationTests, create a test case for the scenario: given a savings account with $19.99, when I try to withdraw $20, the transaction should fail
 2. Implement the test with
-
-  # a savings account
-  # a RulesFactory object (you will define RulesFactory later)
-  # a WithdrawalTransaction (you pass the RulesFactory object into its constructor)
+  * a savings account
+  * a RulesFactory object (you will define RulesFactory later)
+  * a WithdrawalTransaction (you pass the RulesFactory object into its constructor)
 3. Implement just enough of the RuleFactory class to get the code compiling
 4. Run the test and ensure it fails for the right reason
 5. Implement RulesFactory.CreateWithdrawalRulesFor(AccountType) by having it return a collection containing a single MinimumWithdrawalRule
