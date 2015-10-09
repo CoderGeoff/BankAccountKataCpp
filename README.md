@@ -44,7 +44,7 @@ Break the exercise down into these steps
 5. Commit
 6. Make any appropriate improvements to the code and tests
 
-### Step 5: Create the rules with an IRulesFactory interface
+### Step 4: Create the rules with an IRulesFactory interface
 1. Create a new interface, IRulesFactory with a method, `CreateWithdrawalRulesFor(AccountType)` that returns a collection of IRules
 2. In each of the tests in WithdrawTransactionTests, create a mock IRulesFactory object, set up the mock so that it returns the collection of IRules the test uses, and pass the IRulesFactory into the WithdrawTransaction constructor in place of the collection of IRules. 
 3. Run the tests - some should fail.
@@ -52,7 +52,7 @@ Break the exercise down into these steps
 5. Commit.
 6. Make any appropriate improvements to the code and tests
 
-### Step 4: Write a NoOverdraftRule
+### Step 5: Write a NoOverdraftRule
 1. Create a new test case (in a new file) called RulesTests. (Since each rule is really small, tests for all the rules can go into a single test case)
 2. Write a test for the following scenario: given a final balance of -1, when called, IsBlocked should return true
 4. Write just enough of NoOverdraftRule to get the test failing.
@@ -61,14 +61,14 @@ Break the exercise down into these steps
 7. Continue adding tests until NoOverdraftRule is complete
 8. Look for improvements to the code and tests
 
-### Step 5: Write a NoWithdrawRule 
+### Step 6: Write a NoWithdrawRule 
 Follow the method in step 4 to write a NoWithdrawalRule that always returns true from IsBlocked.
 The implementation of this rule is very simple, so it's probably not worth writing more than one test for it. 
 
-### Step 6: Write a MinimumWithdrawalRule 
+### Step 7: Write a MinimumWithdrawalRule 
 Follow the same method to write a MinimumWithdrawalRule. Its IsBlocked should return true if the withdrawal amount is less than a threshold passed into object's constructor. 
 
-### Step 8: Write the first integration test
+### Step 9: Write the first integration test
 1. In a new test suite, IntegrationTests, create a test case for the scenario: given a savings account with $19.99, when I try to withdraw $20, the transaction should fail
 2. Implement the test with
   * a savings account
@@ -78,7 +78,7 @@ Follow the same method to write a MinimumWithdrawalRule. Its IsBlocked should re
 4. Run the test and ensure it fails for the right reason
 5. Implement RulesFactory.CreateWithdrawalRulesFor(AccountType) by having it return a collection containing a single MinimumWithdrawalRule
 
-### Step 9. Complete the implementation of RulesFactory
+### Step 10. Complete the implementation of RulesFactory
 Continuing using TDD, adding integration tests like the one before, until the SavingsAccount rules are complete. Then continue adding rules for the FixedBondAccount and the CheckingAccount. 
 
 
