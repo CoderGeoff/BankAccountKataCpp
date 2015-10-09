@@ -68,7 +68,7 @@ The implementation of this rule is very simple, so it's probably not worth writi
 ### Step 7: Write a MinimumWithdrawalRule 
 Follow the same method to write a MinimumWithdrawalRule. Its IsBlocked should return true if the withdrawal amount is less than a threshold passed into object's constructor. 
 
-### Step 9: Write the first integration test
+### Step 8: Write the first integration test
 1. In a new test suite, IntegrationTests, create a test case for the scenario: given a savings account with $19.99, when I try to withdraw $20, the transaction should fail
 2. Implement the test with
   * a savings account
@@ -78,7 +78,7 @@ Follow the same method to write a MinimumWithdrawalRule. Its IsBlocked should re
 4. Run the test and ensure it fails for the right reason
 5. Implement RulesFactory.CreateWithdrawalRulesFor(AccountType) by having it return a collection containing a single MinimumWithdrawalRule
 
-### Step 10. Complete the implementation of RulesFactory
+### Step 9. Complete the implementation of RulesFactory
 Continuing using TDD, adding integration tests like the one before, until the SavingsAccount rules are complete. Then continue adding rules for the FixedBondAccount and the CheckingAccount. 
 
 
